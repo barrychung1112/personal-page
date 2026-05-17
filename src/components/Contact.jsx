@@ -131,17 +131,19 @@ const Contact = () => {
         </form>
       </motion.div>
 
-      <motion.div
-        ref={earthContainerRef}
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
-      >
-        {shouldRenderEarth ? (
-          <EarthCanvas />
-        ) : (
-          <div className="h-full w-full rounded-2xl bg-tertiary" />
-        )}
-      </motion.div>
+      {!isMobile && (
+        <motion.div
+          ref={earthContainerRef}
+          variants={slideIn("right", "tween", 0.2, 1)}
+          className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        >
+          {shouldRenderEarth ? (
+            <EarthCanvas />
+          ) : (
+            <div className="h-full w-full rounded-2xl bg-tertiary" />
+          )}
+        </motion.div>
+      )}
     </div>
   );
 };
