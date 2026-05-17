@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react'
 import { Canvas } from '@react-three/fiber'
-import { Decal, Float, OrbitControls, Preload, useTexture } from '@react-three/drei'
+import { Decal, Float, OrbitControls, useTexture } from '@react-three/drei'
 import CanvasLoader from "../Loader";
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl])
@@ -42,8 +42,6 @@ const BallCanvas = ({ icon }) => {
         />
         <Ball imgUrl={icon} />
       </Suspense>
-
-      <Preload all />
     </Canvas>
   )
 }
