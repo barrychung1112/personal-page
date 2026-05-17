@@ -1,19 +1,52 @@
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { slideIn } from "../utils/motion";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const Contact = () => {
   const formRef = useRef();
+  const earthContainerRef = useRef();
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const [shouldRenderEarth, setShouldRenderEarth] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (isMobile) {
+      setShouldRenderEarth(false);
+      return;
+    }
+
+    const earthContainer = earthContainerRef.current;
+
+    if (!earthContainer) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldRenderEarth(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px" }
+    );
+
+    observer.observe(earthContainer);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isMobile]);
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -99,10 +132,15 @@ const Contact = () => {
       </motion.div>
 
       <motion.div
+        ref={earthContainerRef}
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
-        <EarthCanvas />
+        {shouldRenderEarth ? (
+          <EarthCanvas />
+        ) : (
+          <div className="h-full w-full rounded-2xl bg-tertiary" />
+        )}
       </motion.div>
     </div>
   );

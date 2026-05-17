@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
-const Computers = (isMobile) => {
+const Computers = ({ isMobile }) => {
   const computer = useGLTF("./earth/scene.gltf");
 
   return (
@@ -15,12 +15,10 @@ const Computers = (isMobile) => {
         groundColor="black"
       />
       <spotLight
-        position={[0, 5, 0]} // Adjust the position
-        angle={0.8} // Adjust the angle
-        penumbra={0.1} // Adjust the penumbra
-        intensity={5} // Increase the intensity
-        castShadow // Make sure this is set
-        shadow-mapSize={2048} // Increase the shadow map size
+        position={[0, 5, 0]}
+        angle={0.8}
+        penumbra={0.1}
+        intensity={5}
       />
       <pointLight intensity={1} />
       <primitive
@@ -53,7 +51,6 @@ const ComputersCanvas = () => {
   return (
     <Canvas
       frameloop="demand"
-      shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
     >
       <Suspense fallback={<CanvasLoader />}>
