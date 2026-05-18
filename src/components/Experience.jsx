@@ -10,7 +10,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-const ExperianceCard = ({ experience }) => (
+const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
     contentStyle={{
       background: "#1d1836",
@@ -56,14 +56,14 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant}>
-        <p className={styles.sectionSubText}>What have I done do far</p>
-        <h2 className={styles.heroHeadText}>Work Experience</h2>
+        <p className={styles.sectionSubText}>Career and education</p>
+        <h2 className={styles.heroHeadText}>Experience</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
-            <ExperianceCard
+            <ExperienceCard
               key={`experience-${index}`}
               experience={experience}
             />
