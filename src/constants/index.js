@@ -13,12 +13,9 @@ import {
     nodejs,
     mongodb,
     git,
-    figma,
+    docker,
     elixir,
-    meta,
     access,
-    tesla,
-    shopify,
     carrent,
     jobit,
     tripguide,
@@ -46,20 +43,20 @@ import {
   
   const services = [
     {
-      title: "Web Developer",
+      title: "AI Agent Engineer",
+      icon: creator,
+    },
+    {
+      title: "Full-Stack Developer",
       icon: web,
     },
     {
-      title: "Flutter Developer",
-      icon: mobile,
-    },
-    {
-      title: "Backend Developer",
+      title: "System Analyst",
       icon: backend,
     },
     {
-      title: "System Analyst",
-      icon: creator,
+      title: "Cloud & Automation Builder",
+      icon: mobile,
     },
   ];
   
@@ -101,6 +98,10 @@ import {
       icon: nodejs,
     },
     {
+      name: "Docker",
+      icon: docker,
+    },
+    {
       name: "Java",
       icon: java,
     },
@@ -120,16 +121,63 @@ import {
   
   const experiences = [
     {
-      title: "Fullstack Developer",
+      title: "AI Agent Engineer",
+      company_name: "GroundShift",
+      icon: creator,
+      iconBg: "#FFFFFF",
+      date: "Jul 2025 - Jan 2026",
+      points: [
+        "Built a multi-AI-agent product from 0 to 1 to calculate, optimize, and report carbon emissions against ISO 14067 requirements.",
+        "Developed workflows and product features with n8n, prompt engineering, Google ADK, Nest.js, MCP tools, and React.js.",
+        "Led product development strategy and growth planning for a company selected by the Google Startup 100 program.",
+      ],
+    },
+    {
+      title: "Student Developer - University IT Team",
+      company_name: "Oregon State University",
+      icon: backend,
+      iconBg: "#FFFFFF",
+      date: "Nov 2024 - Present",
+      points: [
+        "Built Salesforce Apex services and Lightning Web Components that simplified committee-member lookup and status actions.",
+        "Reduced average request handling time by about 35% using Apex, LWC, HTML, and CSS.",
+        "Managed Slate application workflows with partner departments while maintaining a 100% case-solving rate.",
+      ],
+    },
+    {
+      title: "Software Programmer - E-Commerce Information Department",
+      company_name: "Cathay Life Insurance Company, Ltd.",
+      icon: cathaylife,
+      iconBg: "#FFFFFF",
+      date: "Mar 2022 - Jul 2024",
+      points: [
+        "Maintained a large-scale Java financial information system and created batch and inspection systems to reduce risk of company losses.",
+        "Revamped a Vue + Sitecore marketing site, improving online insurance penetration by 17% and O2O conversion by 20% within 3 months.",
+        "Launched a remote time-clock feature that scaled to 60k daily check-ins with peaks above 1k check-ins per minute using Java and DB2.",
+        "Co-developed Cathay Walker Plus, connecting activity data to premium incentives for 570k+ users.",
+        "Mentored two new graduate engineers and led new B2B feature launches and emergency handling.",
+      ],
+    },
+    {
+      title: "Master of Engineering, Computer Science",
+      company_name: "Oregon State University",
+      icon: web,
+      iconBg: "#E6DEDD",
+      date: "Sep 2024 - Jun 2026",
+      points: [
+        "Pursuing graduate work in computer science in Corvallis, Oregon with a 3.5 GPA.",
+        "Focused coursework includes Parallel Programming, Explainable AI, and Graph Neural Networks.",
+      ],
+    },
+    {
+      title: "Full-Stack Developer",
       company_name: "ACCESS Taiwan Lab Co., Ltd.",
       icon: access,
       iconBg: "#FFFFFF",
-      date: "July 2020 - February 2021",
+      date: "Jul 2020 - Feb 2021",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Developing and maintaining backend system with Elixir and MongoDB.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Developed and maintained web applications with React.js and related frontend technologies.",
+        "Built backend systems with Elixir and MongoDB while collaborating across product and engineering teams.",
       ],
     },
     {
@@ -139,36 +187,8 @@ import {
       iconBg: "#FFFFFF",
       date: "Jan 2021 - Feb 2022",
       points: [
-        "Developing and maintaining KOL ecomeriance system using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Connecting with social media API and payment gateway API to provide better user experience.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "System Analyst/Full stack Developer",
-      company_name: "Cathay Life Insurance Company, Ltd.",
-      icon: cathaylife,
-      iconBg: "#FFFFFF",
-      date: "March 2022 - July 2024",
-      points: [
-        "Developing and maintaining large scale financial system using Vue.js and Java.",
-        "Analyzing and designing new feature to provide better user experiance.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Online problem repair and trouble shooting.",
-      ],
-    },
-    {
-      title: "Master of Computer Engineering",
-      company_name: "Oregon State University",
-      icon: meta,
-      iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Developed and maintained a KOL e-commerce system with React.js.",
+        "Integrated social media APIs and payment gateway APIs to improve user experience.",
       ],
     },
   ];
@@ -202,67 +222,67 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "Carbon Emissions AI Agent Platform",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "A multi-agent system for GroundShift that calculates and optimizes carbon emissions, then generates ISO 14067-aligned professional reports.",
       tags: [
         {
-          name: "react",
+          name: "google-adk",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
+          name: "n8n",
           color: "green-text-gradient",
         },
         {
-          name: "tailwind",
+          name: "nestjs",
           color: "pink-text-gradient",
         },
       ],
       image: carrent,
-      source_code_link: "https://github.com/",
+      source_code_link: "",
     },
     {
-      name: "Job IT",
+      name: "Cathay Digital Insurance Growth",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "A Vue + Sitecore marketing-site revamp that improved SEO and customer flows, lifting online insurance penetration by 17% and O2O conversion by 20%.",
       tags: [
         {
-          name: "react",
+          name: "vue",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
+          name: "sitecore",
           color: "green-text-gradient",
         },
         {
-          name: "scss",
+          name: "javascript",
           color: "pink-text-gradient",
         },
       ],
       image: jobit,
-      source_code_link: "https://github.com/",
+      source_code_link: "",
     },
     {
-      name: "Trip Guide",
+      name: "Salesforce University IT Workflow",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "A Salesforce Apex and Lightning Web Components workflow that simplified committee-member lookup and status actions, reducing request handling time by about 35%.",
       tags: [
         {
-          name: "nextjs",
+          name: "apex",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "lwc",
           color: "green-text-gradient",
         },
         {
-          name: "css",
+          name: "html-css",
           color: "pink-text-gradient",
         },
       ],
       image: tripguide,
-      source_code_link: "https://github.com/",
+      source_code_link: "",
     },
   ];
   

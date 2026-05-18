@@ -44,10 +44,11 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3wl leading=[30px]"
       >
-        Hi, I'm BarryChung, a software developer and system analyzer. I have
-        experiance in developing web applications, mobile applications, and
-        batch. I have also worked on system analysis and design. I am always
-        looking for new opportunities to create more.
+        I'm Barry Chung, an AI agent engineer and full-stack developer pursuing
+        a Master of Engineering in Computer Science at Oregon State University.
+        I build production systems across AI automation, Salesforce, financial
+        services, and web platforms, with experience taking products from early
+        strategy through launch and operations.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
