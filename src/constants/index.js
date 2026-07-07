@@ -16,14 +16,16 @@ import {
     docker,
     elixir,
     access,
-    carrent,
-    jobit,
-    tripguide,
     threejs,
     vue,
     java,
     ucfunnel,
     cathaylife,
+    googlecloud,
+    n8n,
+    nestjs,
+    salesforce,
+    sitecore,
   } from "../assets";
   
   export const navLinks = [
@@ -154,8 +156,7 @@ import {
         "Maintained a large-scale Java financial information system and created batch and inspection systems to reduce risk of company losses.",
         "Revamped a Vue + Sitecore marketing site, improving online insurance penetration by 17% and O2O conversion by 20% within 3 months.",
         "Launched a remote time-clock feature that scaled to 60k daily check-ins with peaks above 1k check-ins per minute using Java and DB2.",
-        "Co-developed Cathay Walker Plus, connecting activity data to premium incentives for 570k+ users.",
-        "Mentored two new graduate engineers and led new B2B feature launches and emergency handling.",
+        "Co-developed Cathay Walker Plus, connecting activity data to premium incentives for 570k+ users while mentoring new engineers.",
       ],
     },
     {
@@ -239,7 +240,14 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
+      metric: "ISO 14067",
+      accent: "from-emerald-400 via-cyan-400 to-sky-500",
+      visual: "AI",
+      icons: [
+        { name: "Google Cloud", icon: googlecloud },
+        { name: "n8n", icon: n8n },
+        { name: "NestJS", icon: nestjs },
+      ],
       source_code_link: "",
     },
     {
@@ -260,7 +268,13 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: jobit,
+      metric: "+20% O2O conversion",
+      accent: "from-indigo-400 via-violet-400 to-fuchsia-500",
+      visual: "17%",
+      icons: [
+        { name: "Sitecore", icon: sitecore },
+        { name: "Vue", icon: vue },
+      ],
       source_code_link: "",
     },
     {
@@ -281,7 +295,12 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
+      metric: "-35% handling time",
+      accent: "from-amber-300 via-orange-400 to-rose-500",
+      visual: "LWC",
+      icons: [
+        { name: "Salesforce", icon: salesforce },
+      ],
       source_code_link: "",
     },
   ];

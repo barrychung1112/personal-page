@@ -115,13 +115,13 @@ const Contact = () => {
 
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Message</span>
-            <input
-              type="text"
+            <textarea
               name="message"
               onChange={handleChange}
               value={form.message}
               placeholder="Enter your message"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              rows="5"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none"
             />
           </label>
 

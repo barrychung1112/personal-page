@@ -12,21 +12,47 @@ const ProjectCard = ({
   name,
   description,
   tags,
-  image,
+  metric,
+  accent,
+  visual,
+  icons,
   source_code_link,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
-        options={{ max: 45, scale: 1, speed: 450 }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        options={{ max: 18, scale: 1, speed: 450 }}
+        className="bg-tertiary p-5 rounded-lg sm:w-[360px] w-full border border-white/10"
       >
-        <div className="relative w-full h-[230px]">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-full object-cover rounded-2xl"
-          />
+        <div className={`relative w-full h-[230px] overflow-hidden rounded-lg bg-gradient-to-br ${accent}`}>
+          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute left-5 top-5 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[12px] font-semibold text-white backdrop-blur">
+            {metric}
+          </div>
+          <div className="absolute right-5 top-5 flex gap-2">
+            {icons?.map((icon) => (
+              <div
+                key={`${name}-${icon.name}`}
+                className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/20 bg-white/90 shadow-lg"
+                title={icon.name}
+              >
+                <img
+                  src={icon.icon}
+                  alt={icon.name}
+                  className="h-7 w-7 object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="absolute inset-x-5 bottom-5">
+            <div className="text-white/25 text-[96px] font-black leading-none">
+              {visual}
+            </div>
+            <div className="mt-3 h-2 w-full rounded-full bg-white/20">
+              <div className="h-2 w-2/3 rounded-full bg-white/80" />
+            </div>
+          </div>
           {source_code_link && (
             <div className="absolute insert-0 flex justify-end m-3 card-img_hover w-full">
               <div
@@ -44,18 +70,18 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <h3 className="text-white font-bold text-[22px] leading-7">{name}</h3>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 
-        <div className="mt-4 flex-wrap gap-2">{tags.map(
+        <div className="mt-5 flex flex-wrap gap-2">{tags.map(
           (tag) => (
-            <p
+            <span
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className={`rounded-full bg-white/5 px-3 py-1 text-[13px] font-medium ${tag.color}`}
             >
               #{tag.name}
-            </p>
+            </span>
           )
         )}</div>
       </Tilt>
@@ -83,7 +109,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-16 flex flex-wrap gap-7">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

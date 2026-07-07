@@ -35,6 +35,11 @@ import cathaylife from "./company/cathaylife.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import googlecloud from "./project/googlecloud.svg";
+import n8n from "./project/n8n.svg";
+import nestjs from "./project/nestjs.svg";
+import salesforce from "./project/salesforce.svg";
+import sitecore from "./project/sitecore.svg";
 
 export {
   logo,
@@ -65,6 +70,11 @@ export {
   carrent,
   jobit,
   tripguide,
+  googlecloud,
+  n8n,
+  nestjs,
+  salesforce,
+  sitecore,
   vue,
   java,
   elixir,
